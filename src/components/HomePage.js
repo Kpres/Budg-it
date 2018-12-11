@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Redirect } from "react-router";
+import './Global.css'
 import './HomePage.css';
 
 export class HomePage extends Component {
@@ -7,10 +8,10 @@ export class HomePage extends Component {
         super();
         //State that holds current info (member variables)
         this.state = ({
-            current_savings_percent: 0,
-            total_wallet_amount: 15000,
+            currentSavings: 0,
+            totalWallet: 15000,
             wallet: 15000,
-            wallet_sign: "+",
+            walletSign: "+",
             redirect: false,
             routeToManagement: false,
         });
@@ -24,18 +25,12 @@ export class HomePage extends Component {
     }
 
     //updates the total wallet or spendable amount to be shown
-    updateWallet() {
-        this.setState({wallet: parseFloat((100-this.props.current_savings_percent)/100 * this.props.total_wallet_amount).toFixed(2)     });
+    updateWallet(){
+        this.setState(
+            { wallet: parseFloat((100 * (100 - this.props.currentSavings) / 100 * this.props.totalWallet) / 100).toFixed(2) }
+        )
     }
 
-    //Updates the plus and minus sign on the home page
-    updateWalletSign = () => {
-        if(this.state.wallet <= 0){
-            this.setState({wallet_sign: '-'});
-        }else{
-            this.setState({wallet_sign: '+'});
-        }
-    }
 
     //Routes to the transaction page
     routeToTransaction = () => {
@@ -59,11 +54,14 @@ export class HomePage extends Component {
         
         //return function to render the components
         return(
-        <div className = "BackGround">
-            <span className = "Menu" onClick = {this.routeToManagement}>≡  </span>
-            <span className = "Head">budge.it</span>
-            <div className = "Value">{this.state.wallet_sign}${this.state.wallet}</div>
-            <div className = "Footer" onClick = {this.routeToTransaction}>∇</div>
+        <div className = "page">
+            <span className = "Menu" onClick = {this.routeToManagement}>≡</span>
+            <span className = "Head">budge.
+                <span className="green">i</span>
+                <span className='red'>t</span>
+            </span>
+            <div className = "Value">${(this.state.wallet)}</div>
+            <div className = "Footer" onClick = {this.routeToTransaction}>▼</div>
         </div>
         );
     }

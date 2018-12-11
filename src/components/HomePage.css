@@ -1,40 +1,18 @@
-.Menu {
-    font-size: 500%;
-}
-
-.Menu:Hover {
-    cursor: pointer;
-}
-
 #mButton {
     width: 30%;
 }
-
-.BackGround {
-    margin: 10%;
-    text-align: center
-}
-
 .Head {
-    color: black;
     font-size: 500%;
-    font-family: futura;
+    font-weight: 500;
 }
-
 .Value {
-    color: black;
     font-size: 600%;
-    font-family: futura;
 }
-
 .Footer {
-    color: black;
     font-size: 500%;
-    font-family: futura;
     width: 10%;
     margin: auto;
 }
-
 .Footer:hover {
     cursor: pointer;
 }

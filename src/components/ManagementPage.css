@@ -1,50 +1,65 @@
-.Page {
-    margin: 1%;
+.Header {
+    width: 100%;
 }
-
 .form-group {
-    color: black;
     font-size: 150%;
     text-align: left;
-    margin: 5%;
-    font-family: futura;
 }
-
 .SavingsDisplay {
-    color: black;
     text-align: center;
     font-size: 200%;
     margin-top: 5%;
-    font-family: futura;
 }
-
 .TransactionTable {
     text-align: left;
     font-size: 100%;
-    font-family: futura;
 }
-
-.doneButton {
-    color: black;
-    font-size: 500%;
-    text-align: left;
-    width: 6%;
-    margin-left: 5%;
-    font-family: futura;
-}
-
 .doneButton:hover {
     cursor: pointer;
-    font-family: futura;
 }
-
 .yourSavings {
-    color: black;
-    font-size: 200%;
-    font-family: futura;
+    font-size: 400%;
+    font-weight: 500;
 }
-
+.TableHead {
+    margin-bottom: 5px;
+}
 #historyButton {
     height: 25px;
-    font-size: 60%;
+    font-size: 60% !important;
+    margin: 2px;
+}
+
+#TableTitle {
+    font-size: 150%;
+    margin-right: 10px;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #bfbfbf;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #339de5;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #339de5;
+    cursor: pointer;
 }
