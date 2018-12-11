@@ -168,16 +168,22 @@ export class ManagementPage extends Component {
         return (
         <div className = "page">
             <div className = "Header">
-                <span className = "Menu" onClick = {this.route}>≡</span>
+                <span className = "Menu" 
+                    onClick = {this.route}>
+                    ≡
+                </span>
                 <span className = "yourSavings">Your Savings</span>
             </div>
 
             <div>
                 <div class="big">
-                    <div class="pie pie--value pie--disc" style={{"--percent":this.state.savingsThreshold,"--amount":( 
-                        (Math.round((this.state.savingsThreshold/100) * (this.state.totalWallet))) < 0) ? 0 : 
-                        (Math.round((this.state.savingsThreshold/100) * (this.state.totalWallet)))
-                        }}></div>
+                    <div class="pie pie--value pie--disc" 
+                        style={{ 
+                            "--percent":this.state.savingsThreshold,"--amount":( 
+                            (Math.round((this.state.savingsThreshold/100) * (this.state.totalWallet))) < 0) ? 0 : 
+                            (Math.round((this.state.savingsThreshold/100) * (this.state.totalWallet)))
+                        }}>
+                    </div>
                     {console.log(parseFloat(this.state.savingsThreshold/100) * parseFloat(this.state.totalWallet))}
                 </div>
             </div>
@@ -186,36 +192,50 @@ export class ManagementPage extends Component {
                 {/* Shows the savings percentage and the radial bar */}
                 <div class="form-group">
                     <label for="formControlRange">Enter Savings Percentage: {this.state.savingsThreshold} %</label>
-                    <input onChange = {this.setThreshold} type="range" defaultValue = {this.state.savingsThreshold} max = "100" class="slider form-control-range" id="formControlRange"></input>   
+                    <input onChange = {this.setThreshold} 
+                        type="range" 
+                        defaultValue = {this.state.savingsThreshold} 
+                        max = "100" 
+                        class="slider form-control-range" 
+                        id="formControlRange">
+                    </input>   
                 </div>
 
                 {/* Shows the history table */}
                 <div class="TransactionTable">
                     <div className="TableHead">
-                        <span align="left" id="TableTitle">History:</span>
-                        <span>
-                            <button id = "historyButton" className="btn btn-outline-secondary" onClick = {this.clearHistory}>Clear</button>
+                        <span align="left" 
+                            id="TableTitle">History:
                         </span>
                         <span>
-                            <button type="button" id = "historyButton" className="btn btn-outline-secondary" onClick = {this.makeSuggestions}>
-                                Suggestion
+                            <button id = "historyButton" 
+                                className="btn btn-outline-secondary" 
+                                    onClick = {this.clearHistory}>Clear
+                                </button>
+                        </span>
+                        <span>
+                            <button type="button" 
+                                id = "historyButton" 
+                                className="btn btn-outline-secondary" 
+                                onClick = {this.makeSuggestions}>
+                                    Suggestion
                             </button>
                         </span>
                     </div>
 
                     {/* Mapping trans to every item in the list and displaying it */}
                     <div align="left" style ={{color: "black"}}> {
-                        this.state.transactionList.length > 0 ? (
-                            this.state.transactionList.map((trans) => 
-                                <li key = {trans.state.id} style={{color: trans.state.amount < 0 ? "#cc2d21" : "#3bbf28"}}>  
-                                    {trans.state.title + " | " + 
-                                    (trans.state.amount < 0 ? " - $" : " + $") + 
-                                    String(Math.abs(trans.state.amount)) + " | " +
-                                    (trans.state.spontaneous ? "Spontaneous" : "Regular")} 
-                                </li>
+                            this.state.transactionList.length > 0 ? (
+                                this.state.transactionList.map((trans) => 
+                                    <li key = {trans.state.id} style={{color: trans.state.amount < 0 ? "#cc2d21" : "#3bbf28"}}>  
+                                        {trans.state.title + " | " + 
+                                        (trans.state.amount < 0 ? " - $" : " + $") + 
+                                        String(Math.abs(trans.state.amount)) + " | " +
+                                        (trans.state.spontaneous ? "Spontaneous" : "Regular")} 
+                                    </li>
+                                    )
                                 )
-                            )
-                        :(<div></div>)
+                            :(<div></div>)
                         } 
                     </div>
                 </div> 
