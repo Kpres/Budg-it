@@ -55,13 +55,19 @@ export class HomePage extends Component {
         //return function to render the components
         return(
         <div className = "page">
-            <span className = "Menu" onClick = {this.routeToManagement}>≡</span>
+            <span className = "Menu"
+                onClick = {this.routeToManagement}>
+                ≡
+            </span>
             <span className = "Head">budge.
                 <span className="green">i</span>
                 <span className='red'>t</span>
             </span>
             <div className = "Value">${(this.state.wallet)}</div>
-            <div className = "Footer" onClick = {this.routeToTransaction}>▼</div>
+            <div className = "Footer" 
+                onClick = {this.routeToTransaction}>
+                ▼
+            </div>
         </div>
         );
     }

@@ -190,7 +190,8 @@ export class TransactionPage extends Component {
 
                     <div className="row form-row confirm">
                         <div className="transaction-item">
-                            <button type="button" className="btn btn-blue btn-lg" onClick = {this.routeManagement}>
+                            <button type="button" 
+                                className="btn btn-blue btn-lg" onClick = {this.routeManagement}>
                                 Confirm
                             </button>
                         </div>
