@@ -1,4 +1,5 @@
-export class TransactionItem{
+//object that contains a transaction item information
+export class TransactionItem {
     constructor(_amount, _title, _spontaneous, _id){
 
         this.state = ({
@@ -8,16 +9,16 @@ export class TransactionItem{
             id: _id,
         });
     }
-    
-    getAmount(){
+    //getter functions to get the values throughout the rest of the program
+    getAmount() {
         return this.state.amount;
     }
 
-    getTitle(){
+    getTitle() {
         return this.state.title;
     }
 
-    getSpontaneous(){
+    getSpontaneous() {
         return this.state.spontaneous;
     }
 };

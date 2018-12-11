@@ -6,8 +6,8 @@ import './radial.css'
 import './ManagementPage.css';
 import swal from 'sweetalert2'
 
-export class ManagementPage extends Component{
-    constructor(){
+export class ManagementPage extends Component {
+    constructor() {
         super();
         //state to hold member variables
         this.state = ({
@@ -26,7 +26,7 @@ export class ManagementPage extends Component{
     }
 
     //function to run every time the component parent state changes
-    componentWillMount(){
+    componentWillMount() {
         this.updateTransactionList();
         this.setState({savingsThreshold: localStorage.getItem("hi")})
     }
@@ -100,7 +100,7 @@ export class ManagementPage extends Component{
             else { //Next suggestion that tests for spending too much on any one item
                 var countObj = {};
                 //get the total spent for each item
-                for (var i = 0; i < transactions.length; i++) {
+                for (i = 0; i < transactions.length; i++) {
                     if (transactions[i].getAmount() < 0){
                         if (transactions[i].getTitle().toLowerCase() in countObj){
                             countObj[transactions[i].getTitle().toLowerCase()] = countObj[transactions[i].getTitle().toLowerCase()] + Math.abs(transactions[i].getAmount());
@@ -112,7 +112,7 @@ export class ManagementPage extends Component{
                 //Find the item that you spent the most on
                 var maxTalliedTotal = 0;
                 var maxTalliedName = "";
-                for (var i = 0; i < transactions.length; i++) {
+                for (i = 0; i < transactions.length; i++) {
                     if (countObj[transactions[i].getTitle().toLowerCase()] > maxTalliedTotal){
                         maxTalliedTotal = countObj[transactions[i].getTitle().toLowerCase()];
                         maxTalliedName = transactions[i].getTitle().toLowerCase();
@@ -130,7 +130,7 @@ export class ManagementPage extends Component{
                     var spontaneousPurchase = 0;
                   
                     //get totals for each of these values
-                    for (var i = 0; i < transactions.length; i++){
+                    for (i = 0; i < transactions.length; i++){
                         if (!transactions[i].getSpontaneous()){
                             if (transactions[i].getAmount() > 0)
                                 regularIncome += transactions[i].getAmount();
@@ -158,7 +158,7 @@ export class ManagementPage extends Component{
         })
     }
     //render function to render the components
-    render(){
+    render() {
         //local storage to save items
         localStorage.setItem("hi", this.state.savingsThreshold)
         //appropriate routing

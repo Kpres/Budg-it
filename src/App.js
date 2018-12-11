@@ -13,9 +13,9 @@ class App extends Component {
         super(props);
         //member variables
         this.state = ({
-        totalFromManage: 15000,
-        percentFromManage: 0,
-        transaction: [],
+            totalFromManage: 15000,
+            percentFromManage: 0,
+            transaction: [],
         });
         //bind functions so they can set the state
         this.receiveTotal = this.receiveTotal.bind(this);

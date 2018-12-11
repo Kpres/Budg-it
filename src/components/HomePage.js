@@ -3,8 +3,8 @@ import { Redirect } from "react-router";
 import './Global.css'
 import './HomePage.css';
 
-export class HomePage extends Component{
-    constructor(){
+export class HomePage extends Component {
+    constructor() {
         super();
         //State that holds current info (member variables)
         this.state = ({
@@ -20,7 +20,7 @@ export class HomePage extends Component{
     }
 
     //built in react function that runs every time a parent class state changes
-    componentWillMount(){
+    componentWillMount() {
         this.updateWallet();
     }
 
@@ -43,7 +43,7 @@ export class HomePage extends Component{
         this.setState({routeToManagement: true})
     }
 
-    render(){
+    render() {
         // Proper calls for routing purposes
         if (this.state.redirect) {
             return <Redirect push to="/t" />;
